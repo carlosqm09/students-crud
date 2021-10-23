@@ -12,10 +12,8 @@ exports.getOne= async(id) =>{
                 address: `${qry.rows[0].adress.replace(/ /g,'+')}+${qry.rows[0].nbhd.replace(/ /g,'+')}+${qry.rows[0].state}`
             }
         });
-        console.log(maps.data)
         qry.rows[0].lat=maps.data.results[0].geometry.location.lat;
         qry.rows[0].long=maps.data.results[0].geometry.location.lng;
-        console.log(qry.rows)
 
         return qry.rows;
 
