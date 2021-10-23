@@ -18,7 +18,6 @@ router.get("/get-all", async(req, res) => {
 router.get("/get-one/:student_id", async(req, res) => {
   const id = req.params.student_id;
   const result = await getOne(id);
-  console.log(result[0].name);
   res.send(result);
 })
 
