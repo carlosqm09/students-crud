@@ -3,10 +3,16 @@ var router = express.Router();
 
 const {getAll} = require('../db/get-all');
 
-router.get("/get-all", async(req, res) => {
-  const result = await getAll();
+const {Student} = require('../db/student');
 
-  res.send(result);
+const student = new Student;
+
+router.get('/get-all', async (req, res) => {
+  try{
+    const students = await student.getAll();
+    res.status(200).json(students);
+  }catch(e){
+    res.status(500).send(e);
+  }
 })
-
 module.exports = router;
