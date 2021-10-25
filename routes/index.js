@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+const {addStudent}= require('../db/add-student');
 const {Student} = require('../db/student');
 
 const student = new Student;
@@ -19,6 +20,12 @@ router.get('/', (req,res)=>{
 router.get("/get-one/:student_id", async(req, res) => {
   const id = req.params.student_id;
   const result = await student.getOne(id);
+  res.send(result);
+})
+
+router.post("/add-student", async(req, res) => {
+  //const {name, grade, group, email, adress, nbhd, state} = req.body;
+  const result = await addStudent(req.body);
   res.send(result);
 })
 

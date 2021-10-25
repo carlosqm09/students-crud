@@ -1,4 +1,17 @@
 GET http://localhost:3000/get-all HTTP/1.1
+###
+POST http://localhost:3000/add-student HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Samplestdnt4",
+    "grade": 3,
+    "group": "A",
+    "email": "samplestd3@mail.com",
+    "adress": "Calle 111 315",
+    "nbhd": "Santa Rosa",
+    "state": "Yucatan"
+}
 
 ###
 
