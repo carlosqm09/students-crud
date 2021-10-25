@@ -16,3 +16,24 @@ content-type: application/json
 ###
 
 GET http://localhost:3000/get-one/21100001 HTTP/1.1
+
+###
+
+PUT http://localhost:3000/update-student/21100011 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Samplestdnt5",
+    "grade": 3,
+    "group": "A",
+    "email": "samplestd3@mail.com",
+    "adress": "Calle 111 315",
+    "nbhd": "Santa Rosa",
+    "state": "Yucatan"
+}
+
+###
+
+DELETE  http://localhost:3000/delete-student/21100011 HTTP/1.1
+
+###

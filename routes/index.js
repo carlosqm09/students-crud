@@ -23,10 +23,20 @@ router.get("/get-one/:student_id", async(req, res) => {
 })
 
 router.post("/add-student", async(req, res) => {
-  //const {name, grade, group, email, adress, nbhd, state} = req.body;
   const result = await student.addStudent(req.body);
   res.send(result);
 })
+
+router.put("/update-student/:student_id", async(req, res) => {
+  const result = await student.updateStudent(req.params.student_id,req.body);
+  res.send(result);
+})
+
+router.delete("/delete-student/:student_id", async(req, res) => {
+  const result = await student.deleteStudent(req.params.student_id);
+  res.send(result);
+})
+
 
 router.get('/get-all', async (req, res) => {
   try{

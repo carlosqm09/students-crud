@@ -57,6 +57,40 @@ class Student {
             return e;
         }
     }
+
+
+    async updateStudent(id,obj){
+        try {
+            await db.query(`
+                        UPDATE student 
+            SET "name" = '${obj.name}',
+                "grade" = ${obj.grade},
+                "group" = '${obj.group}',
+                "email"='${obj.email}',
+                "adress"='${obj.adress}',
+                "nbhd"='${obj.nbhd}',
+                "state"='${obj.state}'
+            where student_id='${id}';
+                
+            `);
+    
+            return 'Updated succesfuly';
+        }catch(e){
+            return e;
+        }
+    }
+
+
+    async deleteStudent(id){
+        try {
+            await db.query(`DELETE FROM student where student_id='${id}';`);
+    
+            return id;
+        }catch(e){
+            return e;
+        }
+    }
+
 }
 
 exports.Student = Student;
