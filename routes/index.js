@@ -3,7 +3,7 @@ var router = express.Router();
 
 const {Student} = require('../db/student');
 
-const student = new Student;
+const student = new Student();
 //View route
 router.get('/', (req,res)=>{
   res.redirect('/api-docs');
