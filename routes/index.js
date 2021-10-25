@@ -6,6 +6,7 @@ const {getOne} = require('../db/get-one');
 
 //View route
 router.get('/', (req,res)=>{
+  res.redirect('/api-docs');
   res.render('index',{title:'Students API'})
 })
 

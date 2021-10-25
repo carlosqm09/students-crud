@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Students API
+  description: Students API Documentation with SwaggerUI.
+  version: 0.1
+servers:
+  - url: http://localhost:3000
+    description: :D
+paths:
+  /get-all:
+    get:
+      summary: Returns a list of users.
+      description: Makes a request to DB and response with all users list.
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  type: string
+  /get-one/{student_id}:
+    get:
+      summary: Returns a list of users.
+      description: Makes a request to DB and response with all users list.
+      parameters:
+        - in: path
+          name: student_id
+          required: true
+          type: string
+          description: Put a valid student ID
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  type: string
