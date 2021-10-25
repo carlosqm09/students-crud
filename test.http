@@ -12,3 +12,7 @@ content-type: application/json
     "nbhd": "Santa Rosa",
     "state": "Yucatan"
 }
+
+###
+
+GET http://localhost:3000/get-one/21100001 HTTP/1.1
