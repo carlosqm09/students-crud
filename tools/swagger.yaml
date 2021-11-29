@@ -5,6 +5,7 @@ info:
   version: 0.1
 servers:
   - url: https://students-api.azurewebsites.net
+  - url: http://localhost:3000/
     description: :D
 paths:
   /get-all:

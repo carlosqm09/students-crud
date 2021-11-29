@@ -6,7 +6,7 @@ const {Student} = require('../db/student');
 const student = new Student();
 //View route
 router.get('/', (req,res)=>{
-  res.redirect('/api-docs');
+  //res.redirect('/api-docs');
   res.render('index',{title:'Students API'})
 })
 
