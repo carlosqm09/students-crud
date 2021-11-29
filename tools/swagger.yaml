@@ -4,7 +4,7 @@ info:
   description: Students API Documentation with SwaggerUI.
   version: 0.1
 servers:
-  - url: https://students-api.azurewebsites.net
+  - url: https://students-crud.azurewebsites.net
   - url: http://localhost:3000/
     description: :D
 paths:
