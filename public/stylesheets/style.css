@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.item{
+  border: #000 1px solid;
+  border-radius: 10px;
+}
+
+.hide{
+  visibility: hidden;
+}

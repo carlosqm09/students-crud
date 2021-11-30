@@ -1,19 +1,31 @@
 const vue = new Vue({
     el: '#vue',
-    data: {list:[
-
-    ]},
-    mounted: ()=>{
-        const url = 'http://localhost:3000/get-all';
-    
+    data: {
+        list: [],
+        selected: {}
+    },
+    mounted: async function () {
+        const url = '/get-all';
         try {
-            fetch(url).then(res =>res.json()).then(list => this.list=list)
-            
-           
-    
+            const req = await fetch(url);
+            const res = await req.json();
+
+            this.list = res;
+            console.log(res)
         } catch (error) {
             console.log(error)
         }
+    },
+    methods: {
+        openModal: function (e) {
+            const item = this.list[e.target.id];
+            this.selected = item;
+        },
+        print: function (e){
+            const buttons = document.querySelector(".modal-footer");
+            buttons.classList.toggle('hide');
+            window.print();
+            buttons.classList.toggle('hide');
+        }
     }
-
 })
