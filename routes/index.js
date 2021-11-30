@@ -7,7 +7,7 @@ const student = new Student();
 //View route
 router.get('/', (req,res)=>{
   //res.redirect('/api-docs');
-  res.render('index',{title:'Students API'})
+  res.render('index',{title:'CRUD de estudiantes'})
 })
 
 //CRUD routes
